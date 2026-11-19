@@ -190,7 +190,7 @@ void loop() {
     if (mode == MODE_TORQUE) {
 
         effect2.play(true, (long) feelix.current_time);
-        feelix.playHapticEffectAtAngle(effect2, -10);
+        feelix.playHapticEffectAtAngle(effect2, -15); // so the motor alway's starts to push when the effecth is started
         feelix.move_feelix();
 
     } else if (mode == MODE_RETURN) {
@@ -200,14 +200,14 @@ void loop() {
         if (fabs(feelix.angleDeg - (HOME_DEG + MID_OFFSET_DEG)) < RETURN_TOLERANCE ||
             millis() - returnStart > RETURN_TIMEOUT_MS) {
             feelix.setVelocityLimit(22.0);
-            resetStallWatch();      // <- new: restart the stall timer when the velocity effect resumes
+            resetStallWatch();      // restart the stall timer when the velocity effect resumes
             mode = MODE_VELOCITY;
         }
         
 
     } else {
 
-        /* pitch -> scale, smoothed so the effect doesn't jump */
+        /* pitch scale, smoothed so the effect doesn't jump */
         float p = constrain(fabs((float) pitch) / PITCH_FULL, 0.0, 1.0);
         float target = SCALE_MIN + (SCALE_MAX - SCALE_MIN) * p;
         scaleNow = 0.95 * scaleNow + 0.05 * target;
