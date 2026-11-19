@@ -1,10 +1,18 @@
 /*
+
+Bottom and top sketch are the same only the O positions of the motors are different 
+and the bottom sketch is adjusted slightly in effect strength, because of the bigger friction in the bottom of the system.
+
 Set board to 'Generic STM32F4 series'
 Board part number to 'Generic F401RETx'
 Upload method to 'STM32CubeProgrammer (DFU)'
 USB support to 'CDC (generic 'Serial' supersede U(S)ART)'
 U(S)ART support to 'Disabled (no Serial support)'
 USB speed to 'Low/Full Speed'
+
+ACKNOWLEDGEMENTS
+* These sketches are based on the example sketches of the feelix Minidriver effect lib made by Anke van Oosterhout
+* Claude Sonnet 5.5 (Anthropic) was used in the development of this code for the purpose of rapid itteration and bug fixing. Functionallety and requirements where created, tested, and adjusted by Jasper Scheffer.
 */
 
 #include <Feelix.h>
@@ -18,7 +26,7 @@ USB speed to 'Low/Full Speed'
 Feelix feelix = Feelix();
 
 /* ---- range settings (degrees, as Feelix reports them) ---- */
-const float MID_DEG          = 30.0;   // middle of the 100 degree range: change to your real middle
+const float MID_DEG          = 30.0;   // middle of the range
 const float RETURN_TOLERANCE = 2.0;    // close enough to MID_DEG
 const uint16_t RETURN_TIMEOUT_MS = 4000;   // resume anyway if the middle isn't reached in this time
 
