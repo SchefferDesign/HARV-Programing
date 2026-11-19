@@ -8,7 +8,7 @@
  *   byte   1 = moving fast    -> callback index 2   (held for FAST_HOLD_MS once detected)
  * Acknowledgements
  * These sketches are based on the example sketches of the feelix Minidriver effect lib made by Anke van Oosterhout
- * Claude Sonnet 5.5 (Anthropic) was used in the development of this code for the purpose of rapid bug fixing. All functions were created, tested, and adjusted by the author.
+ * Claude Sonnet 5.5 (Anthropic) was used in the development of this code for the purpose of rapid bug fixing. Functionallety and requirements where created, tested, and adjusted by Jasper Scheffer.
  */
 
 /* ---------- libraries ----------
