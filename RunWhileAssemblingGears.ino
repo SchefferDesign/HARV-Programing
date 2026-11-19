@@ -1,10 +1,16 @@
 /*
+Run this when attatching the gears to the motors and read the zero angle of the motor
+
 Set board to 'Generic STM32F4 series'
 Board part number to 'Generic F401RETx'
 Upload method to 'STM32CubeProgrammer (DFU)'
 USB support to 'CDC (generic 'Serial' supersede U(S)ART)'
 U(S)ART support to 'Disabled (no Serial support)'
 USB speed to 'Low/Full Speed'
+
+ACKNOWLEDGEMENTS
+* These sketches are based on the example sketches of the feelix Minidriver effect lib made by Anke van Oosterhout
+* Claude Sonnet 5.5 (Anthropic) was used in the development of this code for the purpose of rapid itteration and bug fixing. Functionallety and requirements where created, tested, and adjusted by Jasper Scheffer.
 */
 
 #include <Feelix.h>
